@@ -1,0 +1,19 @@
+<h1>All the projects</h1>
+
+<!-- <% if flash["notice"].present? %>
+    <%= flash["notice"] %>
+<% end %> -->
+
+<%= flash_message %>
+
+<ul>
+  <% @projects.each do |project| %>
+    <li>
+      <!-- Title: <a href="<%= project_path(project.id) %>"><%= project.title %></a> -->
+      Title: <%= link_to(project.title, project_path(project.id)) %>
+      <%= " - #{project.description}" unless project.description.nil? %>
+      <%= link_to("Delete", project_path(project),
+                  method: :delete, data: { confirm: "Are you sure?" }) %>
+    </li>
+  <% end %>
+</ul>

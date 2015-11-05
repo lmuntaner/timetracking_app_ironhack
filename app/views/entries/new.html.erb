@@ -1,0 +1,20 @@
+<h3>Create a new Entry</h3>
+
+<!-- <% if flash["errors"].present? %>
+  <ul>
+    <% flash["errors"].each do |error_message| %>
+      <li><%= error_message %></li>
+    <% end %>
+  </ul>
+<% end %> -->
+
+<%= flash_message %>
+
+<%= form_for [@project, @entry] do |f| %>
+  <%= f.number_field :hours, placeholder: "How Many Hours?" %>
+  <%= f.number_field :minutes, placeholder: "How Many Minutes?" %>
+  <%= f.date_field :date %>
+  <%= f.text_area :comment, placeholder: "Insert a comment" %>
+
+  <%= f.submit "Add my time!" %>
+<% end %>

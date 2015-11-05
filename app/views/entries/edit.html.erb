@@ -1,0 +1,10 @@
+<h3>Edit Entry</h3>
+
+<%= form_for @entry do |f| %>
+  <%= f.number_field :hours, placeholder: "How Many Hours?" %>
+  <%= f.number_field :minutes, placeholder: "How Many Minutes?" %>
+  <%= f.date_field :date %>
+  <%= f.text_area :comment, placeholder: "Insert a comment" %>
+
+  <%= f.submit "Change my time!" %>
+<% end %>

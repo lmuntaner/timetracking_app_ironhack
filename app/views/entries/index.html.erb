@@ -1,0 +1,18 @@
+<h3>Title: <%= @project.title %></h3>
+
+<a href="<%= project_path(@project.id) %>">Project page</a>
+
+<p>
+  <%= @project.total_time %>
+</p>
+
+<h5>List of entries</h5>
+
+<ul>
+  <% @entries.each do |entry| %>
+    <li>
+      <%= "#{entry.hours} h, #{entry.minutes} min. Date: #{entry.date.strftime('%A, %b %d')}" %>
+      <%= link_to("Delete", entry_path(entry), method: :delete) %>
+    </li>
+  <% end %>
+</ul>
